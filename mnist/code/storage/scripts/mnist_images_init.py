@@ -10,7 +10,7 @@ mydb = mysql.connector.connect(
     port=33061,
     user="root",
     password="secret",
-    database="abc_db"
+    database="mnist_validate_by_human"
 )
 mycursor = mydb.cursor()
 
