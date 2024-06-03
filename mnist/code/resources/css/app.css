@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.number-animation {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+.number-animation:hover {
+transform: scale(1.1);
+}
+
+.custom-icon {
+  color: #c23737; 
+}
+.custom-icon:hover {
+  color: #b32020;
+}
+
+.table-cell-text {
+  font-size: 1.1rem;
+}
