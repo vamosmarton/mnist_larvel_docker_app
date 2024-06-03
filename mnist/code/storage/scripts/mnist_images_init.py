@@ -7,9 +7,10 @@ from datetime import datetime
 
 mydb = mysql.connector.connect(
     host="localhost",
+    port=33061,
     user="root",
-    password="",
-    database="mnist_validate_by_human"
+    password="secret",
+    database="abc_db"
 )
 mycursor = mydb.cursor()
 
