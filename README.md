@@ -13,7 +13,11 @@
       - `numpy`
       - `matplotlib`
 
+## Before Run:
+- COPY `env.examples` FROM `/docker` and `/code` then MAKE NEW `.env` files and PASTE the content.
+
 ## Run:
+Navigate INTO `mnist/docker` and EXECUTE these COMMANDS
 - `docker-compose up -d --build nginx`
 - `docker-compose run --rm composer update`
 - `docker-compose run --rm npm update`
