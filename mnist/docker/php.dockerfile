@@ -12,6 +12,18 @@ RUN mkdir -p /var/www/html
 
 RUN apk upgrade --update
 
+
+# Install packages python3 and packages
+RUN apk add --no-cache python3
+RUN apk add --no-cache pkgconfig
+
+RUN python3 -m venv /venv && \
+    /venv/bin/pip install matplotlib numpy python-mnist mysql-connector-python 
+
+
+ENV PYTHONPATH /venv/lib/python3.12/site-packages:$PYTHONPATH
+
+
 # Add packages to the _build_deps_ virtual bundle. These are used only to build
 #   the PHP modules and can be deleted later
 RUN apk --no-cache --virtual _build_deps_ add \

@@ -18,7 +18,6 @@ services:
     depends_on:
       - php
       - mysql
-      - python
     ports:
       - ${HTTP_ON_HOST}:80
       - ${HTTPS_ON_HOST}:443
@@ -26,19 +25,6 @@ services:
       - ${PATH_TO_CODE}:/var/www/html
     networks:
       - app_network
-
-  python:
-    platform: linux/amd64
-    build:
-      context: .
-      dockerfile: python.dockerfile
-    container_name: ${COMPOSE_PROJECT_NAME}_python
-    volumes:
-      - ${PATH_TO_CODE}:/var/www/html
-    working_dir: /var/www/html
-    networks:
-      - app_network
-    entrypoint: ["tail", "-f", "/dev/null"]
 
   php:
     platform: linux/amd64
